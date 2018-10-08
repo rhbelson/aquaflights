@@ -1,3 +1,49 @@
+// var mymap = L.map('mapid').setView([39.8283, -98.5795], 4);
+//     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+//         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//         maxZoom: 18,
+//         id: 'mapbox.streets',
+//         accessToken: 'pk.eyJ1Ijoicm9iZXJ0YmVsc29uMjAxOSIsImEiOiJjamtpa3dtZTYxNmx0M3hxaDMxdzVlZHF5In0.JLU7BiaFZrYdvsFLJnJriQ'
+//     }).addTo(mymap);
+
+//     //Add Source/DEst Airport
+//     var origin_airport = L.marker([35.8283, -77.95]).addTo(mymap);
+//     origin_airport.bindPopup("<b>Origin</b><br>DCA").openPopup();
+//     var dest_airport = L.marker([35.2283, -122.95]).addTo(mymap);
+//     dest_airport.bindPopup("<b>Destination</b><br>SFO").openPopup();
+
+//    // Leaflet Map Data
+    
+
+//     // var airplaneIcon = L.icon({
+//     //     iconUrl: 'airplane.png',
+//     //     // shadowUrl: 'airplane.png',
+
+//     //     iconSize:     [38, 38], // size of the icon
+//     //     shadowSize:   [50, 64], // size of the shadow
+//     //     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+//     //     shadowAnchor: [4, 62],  // the same for the shadow
+//     //     popupAnchor:  [1, 1] // point from which the popup should open relative to the iconAnchor
+//     // });
+//     // L.marker([35, -100], {icon: airplaneIcon}).addTo(mymap);
+
+
+
+
+
+function getMap() {
+	console.log("getMap() called");
+	$("content").fadeOut();
+	document.getElementById("content").hidden=true;
+}
+
+
+function getRankings() {
+	console.log("getRankings() called");
+	document.getElementById("content").hidden=false;
+}
+
+
 // -----------------------------------------------------------------------------------------------------------------------------------------
 /* FUNCTIONS */
 

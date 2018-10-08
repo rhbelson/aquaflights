@@ -2,7 +2,19 @@
 
   <link rel="stylesheet" href="index.css">
   <script src="jquery.min.js"></script>
+  <script src="leaflet.js"></script>
   <script src="index.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+
+ <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+   crossorigin=""></script>
+
 
 
 	<meta name="msapplication-navbutton-color" content="#fdff00">
@@ -31,10 +43,77 @@
 		</header>
 		
 
+<div class="btn-group" role="group">
+  <button type="button" class="btn btn-secondary" style="width:400px;" onclick="getRankings()">Rankings</button>
+  <button id="interactive_map" type="button" class="btn btn-secondary" style="width:400px" onclick="getMap()">Interactive Map</button>
+</div>
 
 
 
-		<div class="content">
+<div id="map_jumbo" class="jumbotron">
+  <div id="leafletmap"></div>
+  <script>
+    var mymap = L.map('leafletmap').setView([39.8283, -98.5795], 4);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1Ijoicm9iZXJ0YmVsc29uMjAxOSIsImEiOiJjamtpa3dtZTYxNmx0M3hxaDMxdzVlZHF5In0.JLU7BiaFZrYdvsFLJnJriQ'
+    }).addTo(mymap);
+
+    //Add Source/DEst Airport
+    var origin_airport = L.marker([35.8283, -77.95]).addTo(mymap);
+    origin_airport.bindPopup("<b>Origin</b><br>DCA").openPopup();
+    var dest_airport = L.marker([35.2283, -122.95]).addTo(mymap);
+    dest_airport.bindPopup("<b>Destination</b><br>SFO").openPopup();
+
+
+    wtext="39.86 -104.67 39.86 -104.63 39.84 -104.53 39.82 -104.31 39.79 -104.1 39.78 -104.04 39.77 -103.99 39.75 -103.82 39.75 -103.82 39.74 -103.76 39.74 -103.67 39.72 -103.51 39.72 -103.43 39.7 -103.16 39.69 -103.06 39.68 -103 39.67 -102.91 39.67 -102.86 39.63 -102.43 39.59 -102.01 39.55 -101.41 39.49 -98.81 39.49 -98.71 39.47 -98.2 39.38 -96.24 39.33 -95.49 39.29 -94.74 39.37 -93.89 39.39 -93.65 39.51 -92.22 39.55 -91.66 39.66 -89.97 39.75 -88.14 39.79 -87.11 39.81 -86.37 39.87 -85.84 39.92 -85.32 40.09 -83.38 40.12 -82.99 40.15 -82.59 40.08 -81.61 40.02 -80.82 39.63 -80.01 39.56 -79.86 39.56 -79.86 39.5 -79.53 39.49 -79.51 39.48 -79.41 39.46 -79.33 39.45 -79.28 39.43 -79.18 39.42 -79.12 39.4 -79.02 39.39 -78.93 39.39 -78.91 39.37 -78.81 39.33 -78.6 39.32 -78.57 39.29 -78.37 39.25 -78.3 39.22 -78.24 39.19 -78.19 39.17 -78.14 39.13 -78.06 39.1 -78.01 39.06 -77.94 39.02 -77.87 39 -77.82 38.97 -77.76 38.96 -77.69 38.95 -77.62 39 -77.58 39.01 -77.57 39.11 -77.57 39.16 -77.58 39.23 -77.58 39.24 -77.58 39.15 -77.54 39.07 -77.51 38.99 -77.48 38.95 -77.46";
+
+  
+    wp=[];
+    var x;
+    wtext=wtext.split(" ");
+    console.log(wtext);
+    console.log(wtext.length);
+    // for (x = 0; x < 10; x+2) {
+    //   wp.push([wtext[x],wtext[x+1]]);
+    // }
+    console.log(wp);
+
+
+    var waypoints=[[39.86, -104.67], [39.86, -104.63], [39.84, -104.53], [39.82, -104.31], [39.79, -104.1], [39.78, -104.04], [39.77, -103.99], [39.75 ,-103.82],[39.75, -103.82], [39.74, -103.76], [39.74, -103.67], [39.72, -103.51], [39.72, -103.43], [39.7, -103.16]];
+    
+    var i;
+    for (i = 0; i < waypoints.length; i++) {
+      var circleMarker = L.circleMarker(waypoints[i], {
+      color: '#3388ff',
+      weight: 1,
+      radius: 2,
+      }).addTo(mymap);}
+
+   // Leaflet Map Data
+    
+
+    // var airplaneIcon = L.icon({
+    //     iconUrl: 'airplane.png',
+    //     // shadowUrl: 'airplane.png',
+
+    //     iconSize:     [38, 38], // size of the icon
+    //     shadowSize:   [50, 64], // size of the shadow
+    //     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    //     shadowAnchor: [4, 62],  // the same for the shadow
+    //     popupAnchor:  [1, 1] // point from which the popup should open relative to the iconAnchor
+    // });
+    // L.marker([35, -100], {icon: airplaneIcon}).addTo(mymap);
+  </script>
+</div>
+
+
+
+
+
+		<div id="content" class="content">
 			<div class="wmax wmax--legend">
 				<nav class="legend">
 					<div class="legend__section legend__section--wifi">
@@ -113,7 +192,7 @@
 			</div>
 			
 			
-			<div class="line" style="opacity: 1;">
+			<div id="airline1" class="line" style="opacity: 1;">
 				<div class="wmax">
 					<div class="line__key">
 						<div class="line__number-key">Rank</div>
@@ -563,8 +642,8 @@
 		</aside>
 
     <footer> 
-      <h5>Our dataset is sourced in part from our Chrome Extension, ScaleUp, as well as the data provided by Traveloka's Top 50 Tech-Friendly Airlines</h5><br>
-      <h5>From Traveloka: The list of airlines is comprised of the top 50 airlines from the Skytrax World Airline Awards 2018 operating long-haul (6+ hour) flights. Information on the relevant facilities was gathered primarily from the airlines' official websites, as well as informational websites such as AirlinesWiFi and SeatGuru, and reputable publications such as LA Times and Australian Business Traveller, among others. Facilities listed against each airline represent the facilities available in economy class on at least one type of aircraft in use by the airline, and were correct as of June 2018. WiFi cost is based on pricing per hour of internet access. Where WiFi pricing was based on the amount of data used, it was converted into pricing per hour based on the average hourly data consumption of web browsing, according to WhistleOut.</h5>
+      <h6>Our dataset is sourced in part from our Chrome Extension, ScaleUp, as well as the data provided by Traveloka's Top 50 Tech-Friendly Airlines</h6><br>
+      <h6>From Traveloka: The list of airlines is comprised of the top 50 airlines from the Skytrax World Airline Awards 2018 operating long-haul (6+ hour) flights. Information on the relevant facilities was gathered primarily from the airlines' official websites, as well as informational websites such as AirlinesWiFi and SeatGuru, and reputable publications such as LA Times and Australian Business Traveller, among others. Facilities listed against each airline represent the facilities available in economy class on at least one type of aircraft in use by the airline, and were correct as of June 2018. WiFi cost is based on pricing per hour of internet access. Where WiFi pricing was based on the amount of data used, it was converted into pricing per hour based on the average hourly data consumption of web browsing, according to WhistleOut.</h6>
     </footer>
 				
 

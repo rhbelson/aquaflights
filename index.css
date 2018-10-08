@@ -1,3 +1,8 @@
+#leafletmap { height: 580px; }
+
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono');
 /* LESS VARIABLES */
 .normalFont {
@@ -283,11 +288,7 @@ noscript p {
 .header input {
   display: none !important;
 }
-.flapper__yellow-btm input,
-.flapper__yellow-btm div,
-.flapper__yellow-btm img {
-  float: left;
-}
+
 .header__plane {
   margin-top: 9px;
   margin-left: 15px;

@@ -2,14 +2,14 @@
 /* basic positioning */
 
 
-#legend { list-style: none;font-family: 'Overpass Mono', monospace;
+#legend { list-style: none;font-family: 'Overpass Mono', monospace; background-color:#e9ecef;
   font-weight: 600; }
-#legend li { float: left; margin-right: 10px; }
-#legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 5px; }
-#legend .gogo { background-color: #8A2BE2; }
-#legend .panasonic { background-color: #3e6990; }
-#legend .inmarsat { background-color: #f7b32b; }
-#legend .otherprovider{ background-color: #e63946; }
+#legend li { float: left; margin-right: 10px;  }
+#legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 5px;  }
+#legend .legend_k1 { background-color: #8A2BE2; }
+#legend .legend_k2 { background-color: #3e6990; }
+#legend .legend_k3 { background-color: #f7b32b; }
+#legend .legend_k4{ background-color: #e63946; }
 
 
 
@@ -849,7 +849,7 @@ noscript p {
   letter-spacing: .196em;
   float: left;
   width: 286px;
-  background: url(../images/line__name-bg.png) no-repeat top left;
+ /* background: url(../images/line__name-bg.png) no-repeat top left;*/
   background-size: 286px 26px;
   font-size: 16px;
   line-height: 28px;

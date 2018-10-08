@@ -52,11 +52,11 @@
 <form class="form-inline" role="form" style="padding-top: 10px;border-style: solid;border-color: #4E5E9D;">
                         <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="pref-perpage">Filter by:</label>
-                            <select id="pref-perpage" class="form-control">
+                            <select id="pref-perpage" class="form-control" onchange="changeLegend()">
                                 <option selected="selected" value="2">Inflight Provider</option>
-                                <option value="3">Latency</option>
-                                <option value="4">Bandwidth</option>
-                                <option value="5">Best Experience (ATF)</option>
+                                <option id="latoption" value="3">Latency</option>
+                                <option id="bwoption" value="4">Bandwidth</option>
+                                <option id="atfoption" value="5">Best Experience (ATF)</option>
                             </select>                                
                         </div> <!-- form group [rows] -->
                         
@@ -78,10 +78,10 @@
 
 
 <ul id="legend">
-    <li><span class="gogo"></span> Gogo</li>
-    <li><span class="panasonic"></span> Panasonic Aviation</li>
-    <li><span class="inmarsat"></span> Inmarsat</li>
-    <li><span class="otherprovider"></span> Other</li>
+    <li><span class="legend_k1"></span> <a id="legend_k1">Gogo</a></li>
+    <li><span class="legend_k2"></span> <a id="legend_k2">Panasonic Aviation</a></li>
+    <li><span class="legend_k3"></span> <a id="legend_k3"> Inmarsat</a></li>
+    <li><span class="legend_k4"></span> <a id="legend_k4"> Other</a></li>
 </ul>
 
 

@@ -28,7 +28,27 @@
 //     // L.marker([35, -100], {icon: airplaneIcon}).addTo(mymap);
 
 
+function changeLegend() {
+	if (document.getElementById("pref-perpage").selectedIndex==0) {
+		document.getElementById("legend_k1").textContent="Gogo";
+		document.getElementById("legend_k2").textContent="Panasonic Aviation";
+		document.getElementById("legend_k3").textContent="Inmarsat";
+		document.getElementById("legend_k4").textContent="Other";
+	}
+	if (document.getElementById("pref-perpage").selectedIndex==1) {
+		document.getElementById("legend_k1").textContent="<250 ms";
+		document.getElementById("legend_k2").textContent="250-400 ms";
+		document.getElementById("legend_k3").textContent="400-550 ms";
+		document.getElementById("legend_k4").textContent="550+ ms";
+	}
+	if (document.getElementById("pref-perpage").selectedIndex==2) {
+		document.getElementById("legend_k1").textContent="<1 Mbps";
+		document.getElementById("legend_k2").textContent="1-2 Mbps";
+		document.getElementById("legend_k3").textContent="2-5Mbps";
+		document.getElementById("legend_k4").textContent="5+ Mbps";
+	}
 
+}
 
 
 function getMap() {

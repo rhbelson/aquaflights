@@ -1,6 +1,7 @@
 <html lang="id" class="gr__traveloka_com"><head>
 
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="/w3css/4/w3.css">
   <script src="jquery.min.js"></script>
   <script src="leaflet.js"></script>
   <script src="index.js"></script>
@@ -39,14 +40,42 @@
 
 
 		<header class="header">
-      <img src="AquaLab1.png" style="display:inline-block;margin-right: 30px;" width=100><h1 style="text-align: center;font-style: bold;font-size: 40px; display:inline-block;" >AquaFlight: Best Airlines by Wi-Fi Experience</h1>
+      <img src="AquaLab1.png" style="display:inline-block;margin-right: 30px;" width=100><h1 style="text-align: center;font-style: bold;font-size: 40px; color:#ffffff; display:inline-block;" >AquaFlight: Best Airlines by Wi-Fi Experience</h1>
 		</header>
 		
 
-<div class="btn-group" role="group">
-  <button type="button" class="btn btn-secondary" style="width:400px;" onclick="getRankings()">Rankings</button>
-  <button id="interactive_map" type="button" class="btn btn-secondary" style="width:400px" onclick="getMap()">Interactive Map</button>
+<div class="btn-group" role="group" style="background-color: #ffffff;">
+  <button type="button" class="btn btn-secondary" style="width:450px;background-color:#d8d8d8;color:#000000;font-family: 'Overpass', sans-serif;" onclick="getRankings()">Rankings</button>
+  <button id="interactive_map" type="button" class="btn btn-secondary" style="width:450px;background-color:#d8d8d8;color:#000000;font-family: 'Overpass', sans-serif;" onclick="getMap()">Interactive Map</button>
 </div>
+
+
+<form class="form-inline" role="form" style="padding-top: 10px;border-style: solid;border-color: #4E5E9D;">
+                        <div class="form-group">
+                            <label class="filter-col" style="margin-right:0;" for="pref-perpage">Filter by:</label>
+                            <select id="pref-perpage" class="form-control">
+                                <option selected="selected" value="2">Inflight Provider</option>
+                                <option value="3">Latency</option>
+                                <option value="4">Bandwidth</option>
+                                <option value="5">Best Experience (ATF)</option>
+                            </select>                                
+                        </div> <!-- form group [rows] -->
+                        
+                        <div class="form-group">
+                            <label class="filter-col" style="margin-right:0;" for="pref-orderby">Display by:</label>
+                            <select id="pref-orderby" class="form-control">
+                                <option>Color</option>
+                            </select>                                
+                        </div> <!-- form group [order by] --> 
+                        <div class="form-group">    
+                            <div class="checkbox" style="margin-left:10px; margin-right:10px;">
+                                <label><input type="checkbox"> Remember parameters</label>
+                            </div>
+                            <button type="submit" class="btn btn-default filter-col" style="background-color:#f2f4f4">
+                                <span class="glyphicon glyphicon-record"></span> Save Settings
+                            </button>  
+                        </div>
+                    </form>
 
 
 
@@ -61,11 +90,11 @@
         accessToken: 'pk.eyJ1Ijoicm9iZXJ0YmVsc29uMjAxOSIsImEiOiJjamtpa3dtZTYxNmx0M3hxaDMxdzVlZHF5In0.JLU7BiaFZrYdvsFLJnJriQ'
     }).addTo(mymap);
 
-    //Add Source/DEst Airport
-    var origin_airport = L.marker([35.8283, -77.95]).addTo(mymap);
-    origin_airport.bindPopup("<b>Origin</b><br>DCA").openPopup();
-    var dest_airport = L.marker([35.2283, -122.95]).addTo(mymap);
-    dest_airport.bindPopup("<b>Destination</b><br>SFO").openPopup();
+    //Add Icon
+    // var origin_airport = L.marker([35.8283, -77.95]).addTo(mymap);
+    // origin_airport.bindPopup("<b>Origin</b><br>DCA").openPopup();
+    // var dest_airport = L.marker([35.2283, -122.95]).addTo(mymap);
+    // dest_airport.bindPopup("<b>Destination</b><br>SFO").openPopup();
 
 
     wtext="39.86 -104.67 39.86 -104.63 39.84 -104.53 39.82 -104.31 39.79 -104.1 39.78 -104.04 39.77 -103.99 39.75 -103.82 39.75 -103.82 39.74 -103.76 39.74 -103.67 39.72 -103.51 39.72 -103.43 39.7 -103.16 39.69 -103.06 39.68 -103 39.67 -102.91 39.67 -102.86 39.63 -102.43 39.59 -102.01 39.55 -101.41 39.49 -98.81 39.49 -98.71 39.47 -98.2 39.38 -96.24 39.33 -95.49 39.29 -94.74 39.37 -93.89 39.39 -93.65 39.51 -92.22 39.55 -91.66 39.66 -89.97 39.75 -88.14 39.79 -87.11 39.81 -86.37 39.87 -85.84 39.92 -85.32 40.09 -83.38 40.12 -82.99 40.15 -82.59 40.08 -81.61 40.02 -80.82 39.63 -80.01 39.56 -79.86 39.56 -79.86 39.5 -79.53 39.49 -79.51 39.48 -79.41 39.46 -79.33 39.45 -79.28 39.43 -79.18 39.42 -79.12 39.4 -79.02 39.39 -78.93 39.39 -78.91 39.37 -78.81 39.33 -78.6 39.32 -78.57 39.29 -78.37 39.25 -78.3 39.22 -78.24 39.19 -78.19 39.17 -78.14 39.13 -78.06 39.1 -78.01 39.06 -77.94 39.02 -77.87 39 -77.82 38.97 -77.76 38.96 -77.69 38.95 -77.62 39 -77.58 39.01 -77.57 39.11 -77.57 39.16 -77.58 39.23 -77.58 39.24 -77.58 39.15 -77.54 39.07 -77.51 38.99 -77.48 38.95 -77.46";
@@ -76,25 +105,19 @@
     wtext=wtext.split(" ");
     console.log(wtext);
     console.log(wtext.length);
-    // for (x = 0; x < 10; x+2) {
-    //   wp.push([wtext[x],wtext[x+1]]);
-    // }
+    for (x = 0; x <wtext.length; x=x+2) {
+      wp.push([wtext[x],wtext[x+1]]);
+    }
     console.log(wp);
 
-
-    var waypoints=[[39.86, -104.67], [39.86, -104.63], [39.84, -104.53], [39.82, -104.31], [39.79, -104.1], [39.78, -104.04], [39.77, -103.99], [39.75 ,-103.82],[39.75, -103.82], [39.74, -103.76], [39.74, -103.67], [39.72, -103.51], [39.72, -103.43], [39.7, -103.16]];
-    
+    // Add waypoints to map
     var i;
-    for (i = 0; i < waypoints.length; i++) {
-      var circleMarker = L.circleMarker(waypoints[i], {
+    for (i = 0; i < wp.length; i++) {
+      var circleMarker = L.circleMarker(wp[i], {
       color: '#3388ff',
       weight: 1,
-      radius: 2,
-      }).addTo(mymap);}
-
-   // Leaflet Map Data
-    
-
+      radius: 3,
+      }).addTo(mymap);}    
     // var airplaneIcon = L.icon({
     //     iconUrl: 'airplane.png',
     //     // shadowUrl: 'airplane.png',
@@ -113,7 +136,7 @@
 
 
 
-		<div id="content" class="content">
+		<div id="content" class="content" style="background-color: #727276;">
 			<div class="wmax wmax--legend">
 				<nav class="legend">
 					<div class="legend__section legend__section--wifi">
@@ -642,8 +665,8 @@
 		</aside>
 
     <footer> 
-      <h6>Our dataset is sourced in part from our Chrome Extension, ScaleUp, as well as the data provided by Traveloka's Top 50 Tech-Friendly Airlines</h6><br>
-      <h6>From Traveloka: The list of airlines is comprised of the top 50 airlines from the Skytrax World Airline Awards 2018 operating long-haul (6+ hour) flights. Information on the relevant facilities was gathered primarily from the airlines' official websites, as well as informational websites such as AirlinesWiFi and SeatGuru, and reputable publications such as LA Times and Australian Business Traveller, among others. Facilities listed against each airline represent the facilities available in economy class on at least one type of aircraft in use by the airline, and were correct as of June 2018. WiFi cost is based on pricing per hour of internet access. Where WiFi pricing was based on the amount of data used, it was converted into pricing per hour based on the average hourly data consumption of web browsing, according to WhistleOut.</h6>
+      <h6 style="font-family: 'Overpass', sans-serif;">Our dataset is sourced in part from our Chrome Extension, ScaleUp, as well as the data provided by Traveloka's Top 50 Tech-Friendly Airlines</h6><br>
+      <h6 style="font-family: 'Overpass', sans-serif;">From Traveloka: The list of airlines is comprised of the top 50 airlines from the Skytrax World Airline Awards 2018 operating long-haul (6+ hour) flights. Information on the relevant facilities was gathered primarily from the airlines' official websites, as well as informational websites such as AirlinesWiFi and SeatGuru, and reputable publications such as LA Times and Australian Business Traveller, among others. Facilities listed against each airline represent the facilities available in economy class on at least one type of aircraft in use by the airline, and were correct as of June 2018. WiFi cost is based on pricing per hour of internet access. Where WiFi pricing was based on the amount of data used, it was converted into pricing per hour based on the average hourly data consumption of web browsing, according to WhistleOut.</h6>
     </footer>
 				
 

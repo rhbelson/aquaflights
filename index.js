@@ -33,14 +33,17 @@
 
 function getMap() {
 	console.log("getMap() called");
-	$("content").fadeOut();
+	// $("content").fadeOut();
 	document.getElementById("content").hidden=true;
+	document.getElementById("map_jumbo").hidden=false;
+	// $("map_jumbo").fadeIn();
 }
 
 
 function getRankings() {
 	console.log("getRankings() called");
 	document.getElementById("content").hidden=false;
+	document.getElementById("map_jumbo").hidden=true;
 }
 
 

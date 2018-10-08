@@ -56,6 +56,7 @@ function getMap() {
 	// $("content").fadeOut();
 	document.getElementById("content").hidden=true;
 	document.getElementById("map_jumbo").hidden=false;
+	document.getElementById("legend/parameters").hidden=false;
 	// $("map_jumbo").fadeIn();
 }
 
@@ -64,6 +65,7 @@ function getRankings() {
 	console.log("getRankings() called");
 	document.getElementById("content").hidden=false;
 	document.getElementById("map_jumbo").hidden=true;
+	document.getElementById("legend/parameters").hidden=true;
 }
 
 

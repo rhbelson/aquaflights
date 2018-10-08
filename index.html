@@ -49,41 +49,40 @@
 </div>
 
 
-<form class="form-inline" role="form" style="padding-top: 10px;border-style: solid;border-color: #4E5E9D;">
-                        <div class="form-group">
-                            <label class="filter-col" style="margin-right:0;" for="pref-perpage">Filter by:</label>
-                            <select id="pref-perpage" class="form-control" onchange="changeLegend()">
-                                <option selected="selected" value="2">Inflight Provider</option>
-                                <option id="latoption" value="3">Latency</option>
-                                <option id="bwoption" value="4">Bandwidth</option>
-                                <option id="atfoption" value="5">Best Experience (ATF)</option>
-                            </select>                                
-                        </div> <!-- form group [rows] -->
-                        
-                        <div class="form-group">
-                            <label class="filter-col" style="margin-right:0;" for="pref-orderby">Display by:</label>
-                            <select id="pref-orderby" class="form-control">
-                                <option>Color</option>
-                            </select>                                
-                        </div> <!-- form group [order by] --> 
-                        <div class="form-group">    
-                            <div class="checkbox" style="margin-left:10px; margin-right:10px;">
-                                <label><input type="checkbox"> Remember parameters</label>
+<div id="legend/parameters">
+    <form class="form-inline" role="form" style="padding-top: 10px;border-style: solid;border-color: #4E5E9D;">
+                            <div class="form-group">
+                                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Filter by:</label>
+                                <select id="pref-perpage" class="form-control" onchange="changeLegend()">
+                                    <option selected="selected" value="2">Inflight Provider</option>
+                                    <option id="latoption" value="3">Latency</option>
+                                    <option id="bwoption" value="4">Bandwidth</option>
+                                    <option id="atfoption" value="5">Best Experience (ATF)</option>
+                                </select>                                
+                            </div> <!-- form group [rows] -->
+                            
+                            <div class="form-group">
+                                <label class="filter-col" style="margin-right:0;" for="pref-orderby">Display by:</label>
+                                <select id="pref-orderby" class="form-control">
+                                    <option>Color</option>
+                                </select>                                
+                            </div> <!-- form group [order by] --> 
+                            <div class="form-group">    
+                                <div class="checkbox" style="margin-left:10px; margin-right:10px;">
+                                    <label><input type="checkbox"> Remember parameters</label>
+                                </div>
+                                <button type="submit" class="btn btn-default filter-col" style="background-color:#f2f4f4">
+                                    <span class="glyphicon glyphicon-record"></span> Save Settings
+                                </button>  
                             </div>
-                            <button type="submit" class="btn btn-default filter-col" style="background-color:#f2f4f4">
-                                <span class="glyphicon glyphicon-record"></span> Save Settings
-                            </button>  
-                        </div>
-                    </form>
-
-
-<ul id="legend">
-    <li><span class="legend_k1"></span> <a id="legend_k1">Gogo</a></li>
-    <li><span class="legend_k2"></span> <a id="legend_k2">Panasonic Aviation</a></li>
-    <li><span class="legend_k3"></span> <a id="legend_k3"> Inmarsat</a></li>
-    <li><span class="legend_k4"></span> <a id="legend_k4"> Other</a></li>
-</ul>
-
+                        </form>
+    <ul id="legend">
+        <li><span class="legend_k1"></span> <a id="legend_k1">Gogo</a></li>
+        <li><span class="legend_k2"></span> <a id="legend_k2">Panasonic Aviation</a></li>
+        <li><span class="legend_k3"></span> <a id="legend_k3"> Inmarsat</a></li>
+        <li><span class="legend_k4"></span> <a id="legend_k4"> Other</a></li>
+    </ul>
+</div>
 
 <div id="map_jumbo" class="jumbotron">
   <div id="leafletmap"></div>

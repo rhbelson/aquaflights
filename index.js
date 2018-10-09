@@ -27,25 +27,69 @@
 //     // });
 //     // L.marker([35, -100], {icon: airplaneIcon}).addTo(mymap);
 
+window.onload=function() {
+	if (localStorage.setItem('index')==null) {
+		console.log("null case");
+		localStorage.setItem('index', '0');
+	} 
+	if (localStorage.getItem('index')=='0') {
+		console.log("0 case");
+  		document.getElementById("pref-perpage").selectedIndex=0;
+	}
+	//Latency selected
+	if (localStorage.getItem('index')=='1') {
+		console.log("1 case");
+		document.getElementById("pref-perpage").selectedIndex=1;
+	}
+	//Bandwidth selected
+	if (localStorage.getItem('index')=='2') {
+		console.log("2 case");
+		document.getElementById("pref-perpage").selectedIndex=2;
+	}
+	//ATF selected
+	if (localStorage.getItem('index')=='3') {
+		console.log("3 case");
+		document.getElementById("pref-perpage").selectedIndex=3;
+	}
+};
+
 
 function changeLegend() {
+	// Inflight Provider selected
 	if (document.getElementById("pref-perpage").selectedIndex==0) {
+		localStorage.setItem('index', '0');
 		document.getElementById("legend_k1").textContent="Gogo";
 		document.getElementById("legend_k2").textContent="Panasonic Aviation";
 		document.getElementById("legend_k3").textContent="Inmarsat";
 		document.getElementById("legend_k4").textContent="Other";
+		document.getElementById("pref-perpage").selectedIndex=0;
 	}
+	//Latency selected
 	if (document.getElementById("pref-perpage").selectedIndex==1) {
+		localStorage.setItem('index', '1');
 		document.getElementById("legend_k1").textContent="<250 ms";
 		document.getElementById("legend_k2").textContent="250-400 ms";
 		document.getElementById("legend_k3").textContent="400-550 ms";
 		document.getElementById("legend_k4").textContent="550+ ms";
+		document.getElementById("pref-perpage").selectedIndex=1;
 	}
+	//Bandwidth selected
 	if (document.getElementById("pref-perpage").selectedIndex==2) {
+		localStorage.setItem('index', '2');
 		document.getElementById("legend_k1").textContent="<1 Mbps";
 		document.getElementById("legend_k2").textContent="1-2 Mbps";
 		document.getElementById("legend_k3").textContent="2-5Mbps";
 		document.getElementById("legend_k4").textContent="5+ Mbps";
+		document.getElementById("pref-perpage").selectedIndex=2;
+	}
+	//ATF selected
+	if (document.getElementById("pref-perpage").selectedIndex==3) {
+		localStorage.setItem('index', '3');
+		document.getElementById("legend_k1").textContent="<150 ms";
+		document.getElementById("legend_k2").textContent="150-300 ms";
+		document.getElementById("legend_k3").textContent="300-450 ms";
+		document.getElementById("legend_k4").textContent="450+ ms";
+		document.getElementById("pref-perpage").selectedIndex=3;
 	}
 
 }

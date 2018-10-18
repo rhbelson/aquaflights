@@ -2,10 +2,13 @@
 /* basic positioning */
 
 
+#qatar_chart1, #emirates_chart1, #delta_chart1, #british_chart1,#jetblue_chart1,#cathay_chart1,#alaska_chart1,#turkish_chart1,#etihad_chart1,#united_chart1  {
+  margin-left: 10%;
+}
 
-
-
-
+#qatar_chart2, #qatar_chart3, #emirates_chart2, #delta_chart2, #british_chart2,#jetblue_chart2,#cathay_chart2,#alaska_chart2,#turkish_chart2,#etihad_chart2,#united_chart2, #emirates_chart3, #delta_chart3, #british_chart3,#jetblue_chart3,#cathay_chart3,#alaska_chart3,#turkish_chart3,#etihad_chart3,#united_chart3 {
+  margin-left: 25%;
+}
 
 #legend { list-style: none;font-family: 'Overpass Mono', monospace; background-color:#e9ecef;
   font-weight: 600; }
@@ -153,7 +156,7 @@ body {
 body {
   font-size: 62.5%;
   font-family: 'Overpass Mono', monospace;
-  background-color: #727276;
+  background-color: #4E5E9D;
   color: #FFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -287,7 +290,7 @@ noscript p {
   line-height: 1.4;
   width: 100%;
   max-width: 630px;
-  color: #727276;
+  color: #4E5E9D;
   font-size: 16px;
   font-family: 'Overpass', sans-serif;
 }
@@ -298,7 +301,7 @@ noscript p {
   }
 }
 .header__copy a {
-  color: #727276;
+  color: #4E5E9D;
 }
 .header input {
   display: none !important;
@@ -597,7 +600,7 @@ noscript p {
 }
 .legend__title {
   font-size: 14px;
-  color: #fdff00;
+  color: #ffffff;
   text-align: center;
   text-transform: uppercase;
   height: 22px;
@@ -617,7 +620,7 @@ noscript p {
   line-height: 22px;
 }
 .legend__split {
-  border-top: 3px solid #fdff00;
+  border-top: 3px solid #ffffff;
   height: 5px;
   margin-top: 10px;
   position: relative;
@@ -636,7 +639,7 @@ noscript p {
   top: 0;
   width: 3px;
   height: 10px;
-  background-color: #fdff00;
+  background-color: #ffffff;
 }
 .legend__split:after {
   right: 0;
@@ -649,7 +652,7 @@ noscript p {
   width: 3px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fdff00;
+  background-color: #ffffff;
 }
 .line {
   width: 100%;
@@ -717,7 +720,7 @@ noscript p {
 }
 .line__number-key {
   float: left;
-  color: #fdff00;
+  color: #ffffff;
 }
 .line__method-key {
   float: right;
@@ -846,8 +849,10 @@ noscript p {
     font-size: 12px;
   }
 }
+
+/*This is where the numbers 1,2,3, etc. are colored*/
 .line--top .line__number {
-  border: 1px solid #fdff00;
+  border: 1px solid #ffffff;
 }
 .line__name {
   position: relative;
@@ -1027,7 +1032,7 @@ noscript p {
   }
 }
 .line__btm-table td span {
-  color: #fdff00;
+  color: #ffffff;
 }
 .footer {
   padding-bottom: 40px;
@@ -1111,7 +1116,7 @@ noscript p {
   transition: all .2s linear;
 }
 .methodology__close-button:hover {
-  background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.833 10.064L7.743 5.96l4.1-4.051a.433.433 0 0 0 0-.611L10.677.125A.429.429 0 0 0 10.37 0a.442.442 0 0 0-.305.125l-4.08 4.04L1.9.127a.429.429 0 0 0-.306-.125.442.442 0 0 0-.305.125L.126 1.3a.433.433 0 0 0 0 .61l4.099 4.053-4.086 4.101a.432.432 0 0 0 0 .611l1.165 1.172a.43.43 0 0 0 .611 0l4.071-4.09 4.074 4.087a.43.43 0 0 0 .61 0l1.166-1.172a.432.432 0 0 0 .128-.305.447.447 0 0 0-.13-.303z' fill='%23FDFF00' fill-rule='nonzero'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.833 10.064L7.743 5.96l4.1-4.051a.433.433 0 0 0 0-.611L10.677.125A.429.429 0 0 0 10.37 0a.442.442 0 0 0-.305.125l-4.08 4.04L1.9.127a.429.429 0 0 0-.306-.125.442.442 0 0 0-.305.125L.126 1.3a.433.433 0 0 0 0 .61l4.099 4.053-4.086 4.101a.432.432 0 0 0 0 .611l1.165 1.172a.43.43 0 0 0 .611 0l4.071-4.09 4.074 4.087a.43.43 0 0 0 .61 0l1.166-1.172a.432.432 0 0 0 .128-.305.447.447 0 0 0-.13-.303z' fill='%23ffffff' fill-rule='nonzero'/%3E%3C/svg%3E");
 }
 .methodology__in {
   position: absolute;
@@ -1496,7 +1501,7 @@ noscript p {
   height: 150px;
 }
 .flapper.XXXL .digit {
-  background-color: #fdff00;
+  background-color: #ffffff;
   border-radius: 5px;
   border: none;
 }
@@ -1744,7 +1749,7 @@ noscript p {
   line-height: 41px;
 }
 .flapper__yellow .flapper .digit {
-  background-color: #fdff00;
+  background-color: #ffffff;
   border-radius: 0;
   border: none;
   border-top: 1px solid #727276;
@@ -1753,7 +1758,7 @@ noscript p {
 .flapper__yellow .flapper .digit div {
   color: #101026;
   padding: 0;
-  background-color: #fdff00;
+  background-color: #ffffff;
 }
 .flapper__yellow .flapper .digit:after {
   content: '';
@@ -1877,7 +1882,7 @@ noscript p {
 }
 .flapper.XXXL .digit {
   color: #fff;
-  background-color: #fdff00;
+  background-color: #ffffff;
   border-radius: 5px;
   border: none;
 }

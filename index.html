@@ -5,6 +5,137 @@
   <script src="leaflet.js"></script>
   <script src="index.js"></script>
   <script src="data.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	      google.charts.setOnLoadCallback(drawChart);
+	      function drawChart() {
+	        var data = google.visualization.arrayToDataTable([
+	          ['Pac Man', 'Percentage'],
+	          ['', 75],
+	          ['', 25]
+	        ]);
+
+	        var options = {
+	          legend: 'none',
+	          pieSliceText: 'none',
+	          pieStartAngle: 135,
+	          backgroundColor:'transparent',
+	          tooltip: { trigger: 'none' },
+	          slices: {
+	            0: { color: '#be4663' },
+	            1: { color: 'transparent' }
+	          }
+	        };
+
+	        var options2 = {
+	          legend: 'none',
+	          pieSliceText: 'none',
+	          pieStartAngle: 135,
+	          backgroundColor:'transparent',
+	          tooltip: { trigger: 'none' },
+	          slices: {
+	            0: { color: '#31adba' },
+	            1: { color: 'transparent' }
+	          }
+	        };
+
+	        var options3 = {
+	          legend: 'none',
+	          pieSliceText: 'none',
+	          pieStartAngle: 135,
+	          backgroundColor:'transparent',
+	          tooltip: { trigger: 'none' },
+	          slices: {
+	            0: { color: 'purple' },
+	            1: { color: 'transparent' }
+	          }
+	        };
+
+	        var chart = new google.visualization.PieChart(document.getElementById('qatar_chart1'));
+	        chart.draw(data, options);
+	        var chart2 = new google.visualization.PieChart(document.getElementById('qatar_chart2'));
+	        chart2.draw(data, options2);
+	        var chart3 = new google.visualization.PieChart(document.getElementById('qatar_chart3'));
+	        chart3.draw(data, options3);
+
+
+	        var chart4 = new google.visualization.PieChart(document.getElementById('emirates_chart1'));
+	        chart4.draw(data, options);
+	        var chart5 = new google.visualization.PieChart(document.getElementById('emirates_chart2'));
+	        chart5.draw(data, options2);
+	        var chart6 = new google.visualization.PieChart(document.getElementById('emirates_chart3'));
+	        chart6.draw(data, options3);
+
+
+	        var chart7 = new google.visualization.PieChart(document.getElementById('delta_chart1'));
+	        chart7.draw(data, options);
+	        var chart8 = new google.visualization.PieChart(document.getElementById('delta_chart2'));
+	        chart8.draw(data, options2);
+	        var chart9 = new google.visualization.PieChart(document.getElementById('delta_chart3'));
+	        chart9.draw(data, options3);
+
+
+	        var chart10 = new google.visualization.PieChart(document.getElementById('british_chart1'));
+	        chart10.draw(data, options);
+	        var chart11 = new google.visualization.PieChart(document.getElementById('british_chart2'));
+	        chart11.draw(data, options2);
+	        var chart12 = new google.visualization.PieChart(document.getElementById('british_chart3'));
+	        chart12.draw(data, options3);
+
+
+	        var chart13 = new google.visualization.PieChart(document.getElementById('jetblue_chart1'));
+	        chart13.draw(data, options);
+	        var chart14 = new google.visualization.PieChart(document.getElementById('jetblue_chart2'));
+	        chart14.draw(data, options2);
+	        var chart15 = new google.visualization.PieChart(document.getElementById('jetblue_chart3'));
+	        chart15.draw(data, options3);
+
+
+	        var chart16 = new google.visualization.PieChart(document.getElementById('cathay_chart1'));
+	        chart16.draw(data, options);
+	        var chart17 = new google.visualization.PieChart(document.getElementById('cathay_chart2'));
+	        chart17.draw(data, options2);
+	        var chart18 = new google.visualization.PieChart(document.getElementById('cathay_chart3'));
+	        chart18.draw(data, options3);
+
+
+	        var chart19 = new google.visualization.PieChart(document.getElementById('alaska_chart1'));
+	        chart19.draw(data, options);
+	        var chart20 = new google.visualization.PieChart(document.getElementById('alaska_chart2'));
+	        chart20.draw(data, options2);
+	        var chart21 = new google.visualization.PieChart(document.getElementById('alaska_chart3'));
+	        chart21.draw(data, options3);
+
+
+	        var chart22 = new google.visualization.PieChart(document.getElementById('turkish_chart1'));
+	        chart22.draw(data, options);
+	        var chart23 = new google.visualization.PieChart(document.getElementById('turkish_chart2'));
+	        chart23.draw(data, options2);
+	        var chart24 = new google.visualization.PieChart(document.getElementById('turkish_chart3'));
+	        chart24.draw(data, options3);
+
+
+	        var chart25 = new google.visualization.PieChart(document.getElementById('etihad_chart1'));
+	        chart25.draw(data, options);
+	        var chart26 = new google.visualization.PieChart(document.getElementById('etihad_chart2'));
+	        chart26.draw(data, options2);
+	        var chart27 = new google.visualization.PieChart(document.getElementById('etihad_chart3'));
+	        chart27.draw(data, options3);
+
+
+	        var chart28 = new google.visualization.PieChart(document.getElementById('united_chart1'));
+	        chart28.draw(data, options);
+	        var chart29 = new google.visualization.PieChart(document.getElementById('united_chart2'));
+	        chart29.draw(data, options2);
+	        var chart30 = new google.visualization.PieChart(document.getElementById('united_chart3'));
+	        chart30.draw(data, options3);
+	      }
+    </script>
+
+
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
@@ -108,8 +239,8 @@
 
 
 
-
-		<div id="content" class="content" style="background-color: #727276;">
+													<!-- Color should be #8191D0 -->
+		<div id="content" class="content" style="background-color: #8191D0">
 			<div class="wmax wmax--legend">
 				<nav class="legend">
 					<div class="legend__section legend__section--wifi">
@@ -195,6 +326,7 @@
 					<div class="line__key">
 						<div class="line__number-key">Rank</div>
 						<div class="line__score-key">Score /100</div>
+					<!-- 	<div class="line__score-rating">Rating</div> -->
 											</div>
 					<div class="clear"></div>
 				</div>
@@ -212,14 +344,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="qatar_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="qatar_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="qatar_chart3" style="width: 30px; height: 30px;"></div>
+<!-- 								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="10.7" style="width: 10.7%;"></div>
 								<div class="bar-3" data-pc="11.6" style="width: 11.6%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div>
+								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -255,14 +390,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="emirates_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="emirates_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="emirates_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="5.6" style="width: 5.6%;"></div>
 								<div class="bar-3" data-pc="12.9" style="width: 12.9%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div>
+								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -298,14 +436,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="delta_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="delta_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="delta_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="12.4" style="width: 12.4%;"></div>
 								<div class="bar-3" data-pc="13.3" style="width: 13.3%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div>
+								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -341,14 +482,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="british_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="british_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="british_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="15.0" style="width: 15%;"></div>
 								<div class="bar-3" data-pc="9.9" style="width: 9.9%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div>
+								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -384,14 +528,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="jetblue_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="jetblue_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="jetblue_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="12.4" style="width: 12.4%;"></div>
 								<div class="bar-3" data-pc="15.0" style="width: 15%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="0" style="width: 0%;"></div>
 								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div>
+								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -427,14 +574,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="cathay_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="cathay_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="cathay_chart3" style="width: 30px; height: 30px;"></div>
+							<!-- 	<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="8.6" style="width: 8.6%;"></div>
 								<div class="bar-3" data-pc="3.4" style="width: 3.4%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div>
+								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -470,14 +620,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="alaska_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="alaska_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="alaska_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="11.1" style="width: 11.1%;"></div>
 								<div class="bar-3" data-pc="9.0" style="width: 9%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div>
+								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -513,14 +666,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="turkish_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="turkish_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="turkish_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="11.6" style="width: 11.6%;"></div>
 								<div class="bar-3" data-pc="3.0" style="width: 3%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div>
+								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -556,14 +712,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="etihad_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="etihad_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="etihad_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="6.4" style="width: 6.4%;"></div>
 								<div class="bar-3" data-pc="2.1" style="width: 2.1%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div>
+								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
 							</div>
 						</div>
 					</div>
@@ -599,14 +758,17 @@
 						</div>
 						<div class="line__bar">
 							<div class="line__bar-content">
-								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
+								<div id="united_chart1" style="width: 30px; height: 30px;"></div>
+								<div id="united_chart2" style="width: 30px; height: 30px;"></div>
+								<div id="united_chart3" style="width: 30px; height: 30px;"></div>
+								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
 								<div class="bar-2" data-pc="6.4" style="width: 6.4%;"></div>
 								<div class="bar-3" data-pc="6.0" style="width: 6%;"></div>
 								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
 								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
 								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div>
+								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
 							</div>
 						</div>
 					</div>

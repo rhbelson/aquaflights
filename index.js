@@ -27,31 +27,30 @@
 //     // });
 //     // L.marker([35, -100], {icon: airplaneIcon}).addTo(mymap);
 
-window.onload=function() {
-	if (localStorage.setItem('index')==null) {
-		console.log("null case");
-		localStorage.setItem('index', '0');
-	} 
-	if (localStorage.getItem('index')=='0') {
-		console.log("0 case");
-  		document.getElementById("pref-perpage").selectedIndex=0;
-	}
-	//Latency selected
-	if (localStorage.getItem('index')=='1') {
-		console.log("1 case");
-		document.getElementById("pref-perpage").selectedIndex=1;
-	}
-	//Bandwidth selected
-	if (localStorage.getItem('index')=='2') {
-		console.log("2 case");
-		document.getElementById("pref-perpage").selectedIndex=2;
-	}
-	//ATF selected
-	if (localStorage.getItem('index')=='3') {
-		console.log("3 case");
-		document.getElementById("pref-perpage").selectedIndex=3;
-	}
-};
+
+function drawChart() {
+		console.log("draw chart started");
+        var data = google.visualization.arrayToDataTable([
+          ['Pac Man', 'Percentage'],
+          ['', 75],
+          ['', 25]
+        ]);
+
+        var options = {
+          legend: 'none',
+          pieSliceText: 'none',
+          pieStartAngle: 135,
+          tooltip: { trigger: 'none' },
+          slices: {
+            0: { color: 'yellow' },
+            1: { color: 'transparent' }
+          }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('qatar_chart1'));
+        chart.draw(data, options);
+        console.log("draw chart finished");
+      }
 
 
 function changeLegend() {
@@ -111,6 +110,43 @@ function getRankings() {
 	document.getElementById("map_jumbo").hidden=true;
 	document.getElementById("legend/parameters").hidden=true;
 }
+
+
+
+
+window.onload=function() {
+	if (localStorage.setItem('index')==null) {
+		console.log("null case");
+		localStorage.setItem('index', '0');
+	} 
+	if (localStorage.getItem('index')=='0') {
+		console.log("0 case");
+  		document.getElementById("pref-perpage").selectedIndex=0;
+	}
+	//Latency selected
+	if (localStorage.getItem('index')=='1') {
+		console.log("1 case");
+		document.getElementById("pref-perpage").selectedIndex=1;
+	}
+	//Bandwidth selected
+	if (localStorage.getItem('index')=='2') {
+		console.log("2 case");
+		document.getElementById("pref-perpage").selectedIndex=2;
+	}
+	//ATF selected
+	if (localStorage.getItem('index')=='3') {
+		console.log("3 case");
+		document.getElementById("pref-perpage").selectedIndex=3;
+	}
+
+
+	/*Chart Drawing Stuff*/
+	// google.charts.load("current", {packages:["corechart"]});
+	// google.charts.setOnLoadCallback(drawChart);
+	// console.log("end of window.onload");
+
+};
+
 
 
 // -----------------------------------------------------------------------------------------------------------------------------------------

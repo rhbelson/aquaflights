@@ -486,12 +486,14 @@ noscript p {
 .legend__box--2 > span:before,
 .legend__box--2 .legend__box-tooltip,
 .legend__box--2 .legend__box-tooltip:after {
-  background-color: #bd6d40;
+  background-color: #be4663;
+  color: #fff;
 }
 .legend__box--3 > span:before,
 .legend__box--3 .legend__box-tooltip,
 .legend__box--3 .legend__box-tooltip:after {
-  background-color: #cbbe33;
+  background-color: #be4663;
+  color: #fff;
 }
 .legend__box--4 > span:before,
 .legend__box--4 .legend__box-tooltip,
@@ -501,18 +503,18 @@ noscript p {
 .legend__box--5 > span:before,
 .legend__box--5 .legend__box-tooltip,
 .legend__box--5 .legend__box-tooltip:after {
-  background-color: #31adba;
+  background-color: #6ad99b;
 }
 .legend__box--6 > span:before,
 .legend__box--6 .legend__box-tooltip,
 .legend__box--6 .legend__box-tooltip:after {
-  background-color: #4978bf;
+  background-color: #9854b6;
   color: #fff;
 }
 .legend__box--7 > span:before,
 .legend__box--7 .legend__box-tooltip,
 .legend__box--7 .legend__box-tooltip:after {
-  background-color: #8979fa;
+  background-color: #9854b6;
   color: #fff;
 }
 .legend__box--8 > span:before,
@@ -742,16 +744,30 @@ noscript p {
   left: 350px;
   position: absolute;
 }
+
+
+/*When you make tab smaller, text moves (needs fix)*/
+.line__score-rating {
+  left: 72%;
+  position: absolute;
+  color: #fff;
+}
+
+
+
 @media only screen and (max-width: 700px) {
-  .line__score-key {
+  .line__score-key, .line__score-rating {
     float: right;
     position: relative;
     left: auto;
   }
 }
+
+/*Edit height of Top 10 Airlines Ranking*/
 .line__top {
   float: left;
   width: 100%;
+  height:70px;
   position: relative;
   cursor: pointer;
 }
@@ -798,22 +814,22 @@ noscript p {
   background-color: #be4663;
 }
 .line__bar-content .bar-2 {
-  background-color: #bd6d40;
+  background-color: #be4663;
 }
 .line__bar-content .bar-3 {
-  background-color: #cbbe33;
+  background-color: #be4663;
 }
 .line__bar-content .bar-4 {
   background-color: #6ad99b;
 }
 .line__bar-content .bar-5 {
-  background-color: #31adba;
+  background-color: #6ad99b;
 }
 .line__bar-content .bar-6 {
-  background-color: #4978bf;
+  background-color: #9854b6;
 }
 .line__bar-content .bar-7 {
-  background-color: #8979fa;
+  background-color: #9854b6;
 }
 .line__bar-content .bar-8 {
   background-color: #9854b6;

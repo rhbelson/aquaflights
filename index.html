@@ -1,150 +1,30 @@
-<html lang="id" class="gr__traveloka_com"><head>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="index.css">
-  <script src="jquery.min.js"></script>
-  <script src="leaflet.js"></script>
-  <script src="data.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-	google.charts.load("current", {packages:["corechart"]});
-	      google.charts.setOnLoadCallback(drawChart);
-	      function drawChart() {
-	        var data = google.visualization.arrayToDataTable([
-	          ['Pac Man', 'Percentage'],
-	          ['', 75],
-	          ['', 25]
-	        ]);
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>AquaFlight</title>
+</head>
+<body>
 
-	        var options = {
-	          legend: 'none',
-	          pieSliceText: 'none',
-	          pieStartAngle: 135,
-	          backgroundColor:'transparent',
-	          tooltip: { trigger: 'none' },
-	          slices: {
-	            0: { color: '#be4663' },
-	            1: { color: 'transparent' }
-	          }
-	        };
+	<link rel="stylesheet" href="index.css">
+	<script src="leaflet.js"></script>
+	<script src="data.js"></script>
 
-	        var options2 = {
-	          legend: 'none',
-	          pieSliceText: 'none',
-	          pieStartAngle: 135,
-	          backgroundColor:'transparent',
-	          tooltip: { trigger: 'none' },
-	          slices: {
-	            0: { color: '#6ad99b' },
-	            1: { color: 'transparent' }
-	          }
-	        };
-
-	        var options3 = {
-	          legend: 'none',
-	          pieSliceText: 'none',
-	          pieStartAngle: 135,
-	          backgroundColor:'transparent',
-	          tooltip: { trigger: 'none' },
-	          slices: {
-	            0: { color: '#9854b6' },
-	            1: { color: 'transparent' }
-	          }
-	        };
-
-	        var chart = new google.visualization.PieChart(document.getElementById('qatar_chart1'));
-	        chart.draw(data, options);
-	        var chart2 = new google.visualization.PieChart(document.getElementById('qatar_chart2'));
-	        chart2.draw(data, options2);
-	        var chart3 = new google.visualization.PieChart(document.getElementById('qatar_chart3'));
-	        chart3.draw(data, options3);
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-	        var chart4 = new google.visualization.PieChart(document.getElementById('emirates_chart1'));
-	        chart4.draw(data, options);
-	        var chart5 = new google.visualization.PieChart(document.getElementById('emirates_chart2'));
-	        chart5.draw(data, options2);
-	        var chart6 = new google.visualization.PieChart(document.getElementById('emirates_chart3'));
-	        chart6.draw(data, options3);
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+	integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+	crossorigin=""/>
 
-
-	        var chart7 = new google.visualization.PieChart(document.getElementById('delta_chart1'));
-	        chart7.draw(data, options);
-	        var chart8 = new google.visualization.PieChart(document.getElementById('delta_chart2'));
-	        chart8.draw(data, options2);
-	        var chart9 = new google.visualization.PieChart(document.getElementById('delta_chart3'));
-	        chart9.draw(data, options3);
-
-
-	        var chart10 = new google.visualization.PieChart(document.getElementById('british_chart1'));
-	        chart10.draw(data, options);
-	        var chart11 = new google.visualization.PieChart(document.getElementById('british_chart2'));
-	        chart11.draw(data, options2);
-	        var chart12 = new google.visualization.PieChart(document.getElementById('british_chart3'));
-	        chart12.draw(data, options3);
-
-
-	        var chart13 = new google.visualization.PieChart(document.getElementById('jetblue_chart1'));
-	        chart13.draw(data, options);
-	        var chart14 = new google.visualization.PieChart(document.getElementById('jetblue_chart2'));
-	        chart14.draw(data, options2);
-	        var chart15 = new google.visualization.PieChart(document.getElementById('jetblue_chart3'));
-	        chart15.draw(data, options3);
-
-
-	        var chart16 = new google.visualization.PieChart(document.getElementById('cathay_chart1'));
-	        chart16.draw(data, options);
-	        var chart17 = new google.visualization.PieChart(document.getElementById('cathay_chart2'));
-	        chart17.draw(data, options2);
-	        var chart18 = new google.visualization.PieChart(document.getElementById('cathay_chart3'));
-	        chart18.draw(data, options3);
-
-
-	        var chart19 = new google.visualization.PieChart(document.getElementById('alaska_chart1'));
-	        chart19.draw(data, options);
-	        var chart20 = new google.visualization.PieChart(document.getElementById('alaska_chart2'));
-	        chart20.draw(data, options2);
-	        var chart21 = new google.visualization.PieChart(document.getElementById('alaska_chart3'));
-	        chart21.draw(data, options3);
-
-
-	        var chart22 = new google.visualization.PieChart(document.getElementById('turkish_chart1'));
-	        chart22.draw(data, options);
-	        var chart23 = new google.visualization.PieChart(document.getElementById('turkish_chart2'));
-	        chart23.draw(data, options2);
-	        var chart24 = new google.visualization.PieChart(document.getElementById('turkish_chart3'));
-	        chart24.draw(data, options3);
-
-
-	        var chart25 = new google.visualization.PieChart(document.getElementById('etihad_chart1'));
-	        chart25.draw(data, options);
-	        var chart26 = new google.visualization.PieChart(document.getElementById('etihad_chart2'));
-	        chart26.draw(data, options2);
-	        var chart27 = new google.visualization.PieChart(document.getElementById('etihad_chart3'));
-	        chart27.draw(data, options3);
-
-
-	        var chart28 = new google.visualization.PieChart(document.getElementById('united_chart1'));
-	        chart28.draw(data, options);
-	        var chart29 = new google.visualization.PieChart(document.getElementById('united_chart2'));
-	        chart29.draw(data, options2);
-	        var chart30 = new google.visualization.PieChart(document.getElementById('united_chart3'));
-	        chart30.draw(data, options3);
-	      }
-    </script>
-
-
-
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-   crossorigin=""/>
-
- <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-   crossorigin=""></script>
+	<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+	integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+	crossorigin=""></script>
 
 
 
@@ -166,646 +46,59 @@
 
 
 	
-					
 
+	<header class="header normalFont" style="background-color: #4E5E9D;">
+		<img src="AquaLab1.png" style="position: relative;left:15px;top:10px;" width=80>
+		<h1 style="text-align: center;font-size: 30px; color:#ffffff;position:relative;bottom:30px" >AquaFlight: Best Airlines by Wi-Fi Experience</h1>
+	</header>
+	<h3 class="normalFont" style="font-style: italic;font-size: 15px;margin-left: 10%;width: 80%">Below, you will find a map of over 100 flights with their respective inflight Wi-Fi quality of experience. Click on any route to find out more about that particular flight.</h3>
 
-		<header class="header">
-      <img src="AquaLab1.png" style="display:inline-block;margin-right: 30px;" width=100><h1 style="text-align: center;font-style: bold;font-size: 40px; color:#ffffff; display:inline-block;" >AquaFlight: Best Airlines by Wi-Fi Experience</h1>
-		</header>
-		
+	<div style="margin-top: 1%">
+		<form class="form-inline" role="form" style="padding-top: 10px;border-style: solid;border-color: #4E5E9D;padding: 5px">
+			<div class="form-group">
+				<label class="filter-col" style="margin-right:0;" for="pref-perpage">Filter by:</label>
+				<select id="pref-perpage" class="form-control" onchange="changeLegend()">
+					<option value="Inflight Provider">Inflight Provider</option>
+					<option id="latoption" value="Latency">Latency</option>
+					<option id="bwoption" value="Bandwidth">Bandwidth</option>
+					<option id="atfoption" value="Best Experience (ATF)">Best Experience (ATF)</option>
+				</select>                                
+			</div> <!-- form group [rows] -->
 
-<div class="btn-group" role="group" style="background-color: #ffffff;">
-  <button type="button" class="btn btn-secondary" style="width:370px;background-color:#d8d8d8;color:#000000;font-family: 'Overpass', sans-serif;" onclick="getRankings()">Rankings</button>
-  <button id="interactive_map" type="button" class="btn btn-secondary" style="width:370px;background-color:#d8d8d8;color:#000000;font-family: 'Overpass', sans-serif;" onclick="getMap()">Interactive Map</button>
-</div>
-
-
-<div id="legend/parameters">
-    <form class="form-inline" role="form" style="padding-top: 10px;border-style: solid;border-color: #4E5E9D;">
-                            <div class="form-group">
-                                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Filter by:</label>
-                                <select id="pref-perpage" class="form-control" onchange="changeLegend()">
-                                    <option value="Inflight Provider">Inflight Provider</option>
-                                    <option id="latoption" value="Latency">Latency</option>
-                                    <option id="bwoption" value="Bandwidth">Bandwidth</option>
-                                    <option id="atfoption" value="Best Experience (ATF)">Best Experience (ATF)</option>
-                                </select>                                
-                            </div> <!-- form group [rows] -->
-                            
-                            <div class="form-group">
-                                <label class="filter-col" style="margin-right:0;" for="pref-orderby">Display by:</label>
-                                <select id="pref-orderby" class="form-control">
-                                    <option>Color</option>
-                                </select>                                
-                            </div> <!-- form group [order by] --> 
-                            <div class="form-group">    
-                                <div class="checkbox" style="margin-left:10px; margin-right:10px;">
-                                    <label><input type="checkbox"> Remember parameters</label>
-                                </div>
-                                <button type="button" id="save_settings" class="btn btn-default filter-col" onclick="changeLegend();stateChecker1();" style="background-color:#f2f4f4">Save Settings
-                                </button>  
-                            </div>
-                        </form>
-    <ul id="legend">
-        <li><span class="legend_k1"></span> <a id="legend_k1">Gogo</a></li>
-        <li><span class="legend_k2"></span> <a id="legend_k2">Panasonic Aviation</a></li>
-        <li><span class="legend_k3"></span> <a id="legend_k3"> Inmarsat</a></li>
-        <li><span class="legend_k4"></span> <a id="legend_k4"> Other</a></li>
-    </ul>
-</div>
-
-<div id="map_jumbo" class="jumbotron">
-  <div id="leafletmap"></div>
-  <script>
-    var mymap = L.map('leafletmap').setView([39.8283, -98.5795], 4);
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1Ijoicm9iZXJ0YmVsc29uMjAxOSIsImEiOiJjamtpa3dtZTYxNmx0M3hxaDMxdzVlZHF5In0.JLU7BiaFZrYdvsFLJnJriQ'
-    }).addTo(mymap);
-
-    //Add Icon
-    // var origin_airport = L.marker([35.8283, -77.95]).addTo(mymap);
-    // origin_airport.bindPopup("<b>Origin</b><br>DCA").openPopup();
-    // var dest_airport = L.marker([35.2283, -122.95]).addTo(mymap);
-    // dest_airport.bindPopup("<b>Destination</b><br>SFO").openPopup();
-
-    
-  </script>
-</div>
-
-
-
-
-													<!-- Color should be #8191D0 -->
-		<div id="content" class="content" style="background-color: #8191D0">
-			<div class="wmax wmax--legend">
-				<nav class="legend">
-					<div class="legend__section legend__section--wifi">
-						<div>
-							<h4 class="legend__title"><span>Airline Overview</span></h4>
-							<div class="legend__split"><span></span></div>
-							<div class="legend__boxes">
-								<div class="legend__box legend__box--1" data-bar="bar-1"><span>Availability</span>
-									<div class="legend__box-q">
-										<span>[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--left">Is there WiFi onboard?</div>
-									</div>
-								</div>
-								<div class="legend__box legend__box--2" data-bar="bar-2"><span>Inflight Provider</span>
-									<div class="legend__box-q">
-										<span>[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--center">Who is offering inflight Wi-Fi?</div>
-									</div>
-								</div>
-								<div class="legend__box legend__box--3" data-bar="bar-3"><span>Cost</span>
-									<div class="legend__box-q">
-										<span>[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--right">Wi-Fi price per hour ($USD)</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="legend__section legend__section--power">
-						<div>
-							<h4 class="legend__title"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335079485-160cec2077bd216fe3fee26bcbef797c.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Power"><span>Performance Metrics</span></h4>
-							<div class="legend__split"><span></span></div>
-							<div class="legend__boxes">
-								<div class="legend__box legend__box--4" data-bar="bar-4"><span>Latency</span>
-									<div class="legend__box-q">
-										<span>[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--left">Average latency (ms)</div>
-									</div>
-								</div>
-								<div class="legend__box legend__box--5" data-bar="bar-5"><span>Bandwidth</span>
-									<div class="legend__box-q">
-										<span>[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--right">Average bandwidth (Mbps)</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="legend__section legend__section--connectedness">
-						<div>
-							<h4 class="legend__title"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335062329-632fe6f9ad06bc1003689d0326c69fd0.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Connectedness"><span>Connectivity</span></h4>
-							<div class="legend__split"><span></span></div>
-							<div class="legend__boxes">
-								<div class="legend__box legend__box--6" data-bar="bar-6"><span>Text<span class="hide"> Messaging</span></span>
-									<div class="legend__box-q">
-										<span>[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--left">Send and receive SMS or instant messages during the flight</div>
-									</div>
-								</div>
-								<div class="legend__box legend__box--7" data-bar="bar-7"><span>Live TV</span>
-									<div class="legend__box-q">
-										<span>[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--center">Watch real time news, sport, or selected TV channels</div>
-									</div>
-								</div>
-								<div class="legend__box legend__box--8" data-bar="bar-8"><span>Phone<span class="hide"> Calls</span></span>
-									<div class="legend__box-q">
-										<span class="">[?]</span>
-										<div class="legend__box-tooltip legend__box-tooltip--right" style="display: none;">Make calls via an in-seat phone or your mobile</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</nav>
+			<div class="form-group" style="margin-left: 5%">    
+				<button type="button" id="save_settings" class="btn btn-default filter-col" onclick="changeLegend();stateChecker1();" style="background-color:#f2f4f4">Update</button>  
 			</div>
-			
-			
-			<div id="airline1" class="line" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__key">
-						<div class="line__number-key">Rank</div>
-						<div class="line__score-key">Score /100</div>
-						<div class="line__score-rating">Rating</div>
-											</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			
-									
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">1</div>
-														<div class="line__name"><span>Qatar Airways</span></div>
-							<div class="line__score">92<span>.3</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="qatar_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="qatar_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="qatar_chart3" style="width: 65px; height: 65px;"></div>
-<!-- 								<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="10.7" style="width: 10.7%;"></div>
-								<div class="bar-3" data-pc="11.6" style="width: 11.6%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm" style="display: none;">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>OnAir										</td></tr><tr><td>Wi-Fi cost:</td><td>$5 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>8Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td><span>Y</span></td></tr><tr><td>Live TV:</td><td><span>Y</span></td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">2</div>
-														<div class="line__name"><span>Emirates</span></div>
-							<div class="line__score">88<span>.4</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="emirates_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="emirates_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="emirates_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="5.6" style="width: 5.6%;"></div>
-								<div class="bar-3" data-pc="12.9" style="width: 12.9%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>OnAir										</td></tr><tr><td>Wi-Fi cost:</td><td>$2.96 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>1Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td><span>Y</span></td></tr><tr><td>Live TV:</td><td><span>Y</span></td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">3</div>
-														<div class="line__name"><span>Delta Air Lines</span></div>
-							<div class="line__score">85<span>.7</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="delta_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="delta_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="delta_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="12.4" style="width: 12.4%;"></div>
-								<div class="bar-3" data-pc="13.3" style="width: 13.3%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>Gogo										</td></tr><tr><td>Wi-Fi cost:</td><td>$1.17 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>15 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td>N</td></tr><tr><td>Live TV:</td><td>N</td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">4</div>
-														<div class="line__name"><span>British Airways</span></div>
-							<div class="line__score">84<span>.9</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="british_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="british_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="british_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="15.0" style="width: 15%;"></div>
-								<div class="bar-3" data-pc="9.9" style="width: 9.9%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>.air									</td></tr><tr><td>Wi-Fi cost:</td><td>$6.62 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>20 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td>N</td></tr><tr><td>Live TV:</td><td>N</td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">5</div>
-														<div class="line__name"><span>jetBlue Airways</span></div>
-							<div class="line__score">82<span>.4</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="jetblue_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="jetblue_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="jetblue_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="12.4" style="width: 12.4%;"></div>
-								<div class="bar-3" data-pc="15.0" style="width: 15%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>Fly-Fi										</td></tr><tr><td>Wi-Fi cost:</td><td>n/a</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>15 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td>N</td></tr><tr><td>Phone calls:</td><td>N</td></tr><tr><td>Live TV:</td><td><span>Y</span></td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">6</div>
-														<div class="line__name"><span>Cathay Pacific</span></div>
-							<div class="line__score">82<span>.0</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="cathay_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="cathay_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="cathay_chart3" style="width: 65px; height: 65px;"></div>
-							<!-- 	<div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="8.6" style="width: 8.6%;"></div>
-								<div class="bar-3" data-pc="3.4" style="width: 3.4%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>Gogo										</td></tr><tr><td>Wi-Fi cost:</td><td>$9.95 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>2 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td><span>Y</span></td></tr><tr><td>Live TV:</td><td><span>Y</span></td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">7</div>
-														<div class="line__name"><span>Alaska Airlines</span></div>
-							<div class="line__score">80<span>.1</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="alaska_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="alaska_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="alaska_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="11.1" style="width: 11.1%;"></div>
-								<div class="bar-3" data-pc="9.0" style="width: 9%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>Gogo									</td></tr><tr><td>Wi-Fi cost:</td><td>$7 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>9.8 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td>N</td></tr><tr><td>Live TV:</td><td>N</td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">8</div>
-														<div class="line__name"><span>Turkish Airlines</span></div>
-							<div class="line__score">79<span>.6</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="turkish_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="turkish_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="turkish_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="11.6" style="width: 11.6%;"></div>
-								<div class="bar-3" data-pc="3.0" style="width: 3%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="0" style="width: 0%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>TTNet										</td></tr><tr><td>Wi-Fi cost:</td><td>$9.99 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>10 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td>N</td></tr><tr><td>Live TV:</td><td><span>Y</span></td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">9</div>
-														<div class="line__name"><span>Etihad Airways</span></div>
-							<div class="line__score">78<span>.6</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="etihad_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="etihad_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="etihad_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="6.4" style="width: 6.4%;"></div>
-								<div class="bar-3" data-pc="2.1" style="width: 2.1%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="5" style="width: 5%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>Wi-Fly										</td></tr><tr><td>Wi-Fi cost:</td><td>$13.95 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>1.33 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td><span>Y</span></td></tr><tr><td>Live TV:</td><td><span>Y</span></td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			
-						
-			<div class="line line--top" style="opacity: 1;">
-				<div class="wmax">
-					<div class="line__arrow js__show-more"><img src="https://tvlk.imgix.net/imageResource/2018/09/19/1537335087544-55d966b56ae5c28f51fb7bf411c8d832.svg?auto=compress%2Cformat&amp;cs=srgb&amp;ixlib=java-1.1.12&amp;q=75" alt="Arrow"></div>
-					<div class="line__top js__show-more">
-						<div class="line__left">
-														<div class="line__number">10</div>
-														<div class="line__name"><span>United Airlines</span></div>
-							<div class="line__score">77<span>.4</span></div>
-						</div>
-						<div class="line__bar">
-							<div class="line__bar-content">
-								<div id="united_chart1" style="width: 65px; height: 65px;"></div>
-								<div id="united_chart2" style="width: 65px; height: 65px;"></div>
-								<div id="united_chart3" style="width: 65px; height: 65px;"></div>
-								<!-- <div class="bar-1" data-pc="25.0" style="width: 25%;"></div>
-								<div class="bar-2" data-pc="6.4" style="width: 6.4%;"></div>
-								<div class="bar-3" data-pc="6.0" style="width: 6%;"></div>
-								<div class="bar-4" data-pc="15" style="width: 15%;"></div>
-								<div class="bar-5" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-6" data-pc="10" style="width: 10%;"></div>
-								<div class="bar-7" data-pc="5" style="width: 5%;"></div>
-								<div class="bar-8" data-pc="0" style="width: 0%;"></div> -->
-							</div>
-						</div>
-					</div>
-					
-					<div class="line__btm">
-						<div class="line__btm-flex">
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Wi-Fi available:</td><td><span>Y</span></td></tr><tr><td>Inflight provider:</td><td>Gogo										</td></tr><tr><td>Wi-Fi cost:</td><td>$5 (USD)</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Latency:</td><td><span>N/A</span></td></tr><tr><td>Bandwidth:</td><td>4.34 Mbps</td></tr></tbody></table>
-							</div>
-							<div class="line__btm-divider"></div>
-							<div class="line__btm-table">
-								<table><tbody><tr><td>Text messaging:</td><td><span>Y</span></td></tr><tr><td>Phone calls:</td><td><span>N</span></td></tr><tr><td>Live TV:</td><td>Y</td></tr></tbody></table>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>
-				</div>	
-			</div>
-			</div>
-		</div>
+		</form>
+		<ul id="legend">
+			<li><span class="legend_k1"></span> <a id="legend_k1">United</a></li>
+			<li><span class="legend_k2"></span> <a id="legend_k2">American</a></li>
+			<li><span class="legend_k3"></span> <a id="legend_k3">Delta</a></li>
+			<li><span class="legend_k4"></span> <a id="legend_k3">Southwest</a></li>
+			<li><span class="legend_k5"></span> <a id="legend_k4">Other</a></li>
+		</ul>
+	</div>
 
-		<aside class="sharing">
-			<ul class="sharing__list">
-				<li class="sharing__facebook"><a target="_blank" href="http://aqualab.cs.northwestern.edu/"></a></li>    
-				<li class="sharing__twitter"><a target="_blank" href="https://twitter.com/robertbelson"></a></li> 
-			</ul>
-		</aside>
- 
-				
-<div class="footer" style="text-align:center;font-family: 'Overpass', sans-serif;">
-  <br>
-  <p class="muted" style="color:gray;"> &copy; Copyright 2018 by Aqualab Research Group, Northwestern University</p>
-</div>
+	<div id="map_jumbo" class="jumbotron">
+		<div id="leafletmap"></div>
+		<script>
+			var mymap = L.map('leafletmap').setView([39.8283, -98.5795], 4);
+			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+				maxZoom: 18,
+				id: 'mapbox.streets',
+				accessToken: 'pk.eyJ1Ijoicm9iZXJ0YmVsc29uMjAxOSIsImEiOiJjamtpa3dtZTYxNmx0M3hxaDMxdzVlZHF5In0.JLU7BiaFZrYdvsFLJnJriQ'
+			}).addTo(mymap);
+		</script>
+	</div>
 
 
 
+	<div class="footer" style="text-align:center;font-family: 'Overpass', sans-serif;">
+		<br>
+		<p class="muted" style="color:gray;"> &copy; Copyright 2018 by Aqualab Research Group, Northwestern University</p>
+	</div>
 
+
+
+</body>
+</html>

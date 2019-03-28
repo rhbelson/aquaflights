@@ -63,9 +63,23 @@ function newFlights() {
 	lat_rank=lat_rank.sort(function(a,b) {
 	  return (+a) - (+b);
 	});
-	// console.log(lat_rank[0]);
-	// console.log(lats);
 	
+	//2) By Bandwidth
+	let bw_rank=[];
+	for (let f=0;f<flights_dict.length;f++) {
+		bw_rank.push(parseFloat(flights_dict[f].bw*0.008).toFixed(2));
+	}
+	let bws=bw_rank.slice(0);
+	// console.log(lats);
+	bw_rank=bw_rank.sort(function(a,b) {
+	  return (+a) - (+b);
+	});
+	console.log("Top Bandwidth "+flight_nos[bws.indexOf(bw_rank[bw_rank.length-1])]+", "+bw_rank[bw_rank.length-1]+ "Kbps");
+	console.log("Top 2nd Bandwidth "+flight_nos[bws.indexOf(bw_rank[bw_rank.length-2])]+", "+bw_rank[bw_rank.length-2]+ "Kbps");
+	console.log("Top 3rd Bandwidth "+flight_nos[bws.indexOf(bw_rank[bw_rank.length-3])]+", "+bw_rank[bw_rank.length-3]+ "Kbps");
+	console.log("Top 4th Bandwidth "+flight_nos[bws.indexOf(bw_rank[bw_rank.length-4])]+", "+bw_rank[bw_rank.length-4]+ "Kbps");
+	console.log("Top 5th Bandwidth "+flight_nos[bws.indexOf(bw_rank[bw_rank.length-5])]+", "+bw_rank[bw_rank.length-5]+ "Kbps");
+
 	console.log("Top Latency "+flight_nos[lats.indexOf(lat_rank[0])]+", "+lat_rank[0]+ "ms");
 	console.log("Top 2nd Latency "+flight_nos[lats.indexOf(lat_rank[1])]+", "+lat_rank[1]+ "ms");
 	console.log("Top 3rd Latency "+flight_nos[lats.indexOf(lat_rank[2])]+", "+lat_rank[2]+ "ms");

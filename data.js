@@ -43,19 +43,53 @@ function newFlights() {
 	console.log(latlngs[flight_nos[1]]);
 	//CHANGE THIS LINE FOR NUMBER OF FLIGHTS
 	for (i = 1; i < flights.length-1; i++) {
-
+		console.log("Successfully plotted"+flight_nos[i].toString());
 		//FOR EACH WAYPOINT
 		for (l = 0; l < latlngs[flight_nos[i]].length; l++) {
 		// console.log(latlngs[flight_nos[i]]);
+			if (latlngs[flight_nos[i]].length>10) {
+				//CHECK THAT EACH WAYPOINT IS NON_NULL
+				if (flight_nos[i].includes("UA")) {
+					var cm = L.circleMarker(latlngs[flight_nos[i]][l], {
+					color: '#005DAA',
+					weight: 1,
+					radius: 3,
+					}).addTo(mymap);
+					cm.bindPopup(flight_nos[i].toString());
+				}
+				else if (flight_nos[i].includes("AA")) {
+					var cm = L.circleMarker(latlngs[flight_nos[i]][l], {
+					color: '#C30019',
+					weight: 1,
+					radius: 3,
+					}).addTo(mymap);
+					cm.bindPopup(flight_nos[i].toString());
+				}
+				else if (flight_nos[i].includes("DAL")) {
+					var cm = L.circleMarker(latlngs[flight_nos[i]][l], {
+					color: '#9b1631',
+					weight: 1,
+					radius: 3,
+					}).addTo(mymap);
+					cm.bindPopup(flight_nos[i].toString());
+				}
+				else if (flight_nos[i].includes("SWA")) {
+					var cm = L.circleMarker(latlngs[flight_nos[i]][l], {
+					color: '#F9B612',
+					weight: 1,
+					radius: 3,
+					}).addTo(mymap);
+					cm.bindPopup(flight_nos[i].toString());
+				}
 
-			//CHECK THAT EACH WAYPOINT IS NON_NULL
-			if (latlngs[flight_nos[i]][l]!=[NaN,NaN]) {
-				var cm = L.circleMarker(latlngs[flight_nos[i]][l], {
-				color: '#008000',
-				weight: 1,
-				radius: 3,
-				}).addTo(mymap);
-				cm.bindPopup(flight_nos[i].toString());
+				else {
+					var cm = L.circleMarker(latlngs[flight_nos[i]][l], {
+					color: '#008000',
+					weight: 1,
+					radius: 3,
+					}).addTo(mymap);
+					cm.bindPopup(flight_nos[i].toString());
+				}
 			}
 		}
 	}
@@ -73,7 +107,7 @@ console.log(obj);
 
 
 window.onload = function() {
-  stateChecker1();
+  // stateChecker1();
   newFlights();
 };
 
